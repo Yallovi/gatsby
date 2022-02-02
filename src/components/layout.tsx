@@ -7,15 +7,7 @@ interface Props {
 }
 
 const Layout = ({ children }: Props) => {
-  return (
-    <div>
-      {/* <title>{pageTitle}</title> */}
-      <main>
-        {/* <h1>{pageTitle}</h1> */}
-        {children}
-      </main>
-    </div>
-  );
+  return <div>{children}</div>;
 };
 
 export default Layout;
