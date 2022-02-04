@@ -19,6 +19,20 @@ export namespace RickAndMorty {
 
   export interface FetchEpisodesResponse
     extends ResponseType<{ results: Episode[] }> {}
+
+  export interface CharacterByIdEpisode {
+    id: string;
+    image: string;
+    name: string;
+  }
+  // export interface CharacterByIdEpisodeData {
+  //   episodesByIds: CharacterByIdEpisode[];
+  // }
+  // export interface CharacterByIdEpisodeVars {
+  //   id: string;
+  // }
+  //   export interface FetchCharactersById
+  //     extends ResponseType<{ results: CharacterByIdEpisode[] }> {}
 }
 
 export const GET_EPISODE = gql`
@@ -33,3 +47,24 @@ export const GET_EPISODE = gql`
     }
   }
 `;
+
+export const GET_CHARACTER_BY_ID_EPISODE = gql`
+  query Query($ids: [ID!]!) {
+    episodesByIds(ids: $ids) {
+      characters {
+        image
+        name
+        id
+      }
+    }
+  }
+`;
+
+//Персонажи при клике на эпизод
+
+// export interface ModalProps {
+//   visible: boolean;
+//   id: string;
+//   //   content: ReactElement | string;
+//   onClose: () => void;
+// }

@@ -11,9 +11,10 @@ const IndexPage = () => {
 
   const { loading, error, data } =
     useQuery<RickAndMorty.FetchEpisodesResponse>(GET_EPISODE);
+  // console.log(data);
 
   const results = data && data.res && data.res.results;
-
+  console.log("index", results);
   return (
     <Layout>
       <div className="bg-slate-300">
