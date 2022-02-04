@@ -28,6 +28,7 @@
     "gatsby": "^4.6.0",
     "gatsby-image": "^3.11.0",
     "gatsby-plugin-apollo": "^4.0.2",
+    "gatsby-plugin-modal-routing-3": "^3.0.0",
     "gatsby-plugin-sharp": "^4.6.0",
     "gatsby-plugin-typescript": "^4.6.0",
     "gatsby-source-filesystem": "^4.6.0",

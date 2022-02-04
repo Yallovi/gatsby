@@ -1,16 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import { useQuery, gql } from "@apollo/client";
 import Layout from "../components/layout";
 import { RickAndMorty, GET_EPISODE } from "../types/types";
-import Characters from "../components/Characters";
+import Modal from "../components/ModalEposide";
 
 const IndexPage = () => {
+  const [isModal, setModal] = React.useState(false);
+  const [propsDate, setProps] = React.useState("");
+  const onClose = () => setModal(false);
+
   const { loading, error, data } =
     useQuery<RickAndMorty.FetchEpisodesResponse>(GET_EPISODE);
 
   const results = data && data.res && data.res.results;
-  console.log("results: ", results);
-  // className = "bg-slate-300";
+
   return (
     <Layout>
       <div className="bg-slate-300">
@@ -24,15 +27,21 @@ const IndexPage = () => {
               <div
                 className=" p-6 m-10 min-w-max bg-white rounded-xl shadow-lg w-96 cursor-pointer hover:scale-125 ease-in duration-300 "
                 key={res.id}
-                onClick={() => alert("hello")}
+                onClick={() => {
+                  setModal(true);
+                  setProps(res.id);
+                }}
               >
                 <div className="text-center">
-                  {res.id}. {res.name}
+                  <div>
+                    {res.id}. {res.name}
+                  </div>
+                  <div>{res.episode}</div>
+                  <div>{res.airDate}</div>
                 </div>
-                <div className="text-center">{res.episode}</div>
-                <div className="text-center">{res.airDate}</div>
               </div>
             ))}
+            <Modal id={propsDate} visible={isModal} onClose={onClose} />
           </div>
         )}
       </div>
