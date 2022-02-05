@@ -1,17 +1,19 @@
-import React, { ReactElement } from "react";
-// import { ModalProps } from "../types/types";
+import { Link } from "gatsby";
+import React from "react";
 import Layout from "./layout";
-import { useQuery } from "@apollo/client";
-import { GET_CHARACTER_BY_ID_EPISODE, RickAndMorty } from "../types/types";
 
 interface ModalProps {
   visible: boolean;
-  id: string;
-  //   content: ReactElement | string;
+  characters: Array<{
+    id: string;
+    name: string;
+    image: string;
+  }>;
+
   onClose: () => void;
 }
 
-const Modal = ({ visible = false, id = "", onClose }: ModalProps) => {
+const Modal = ({ visible = false, characters, onClose }: ModalProps) => {
   const onKeydown = ({ key }: KeyboardEvent) => {
     switch (key) {
       case "Escape":
@@ -19,18 +21,6 @@ const Modal = ({ visible = false, id = "", onClose }: ModalProps) => {
         break;
     }
   };
-
-  const { loading, error, data } = useQuery(GET_CHARACTER_BY_ID_EPISODE, {
-    variables: { ids: id },
-  });
-  //   console.log("data", data);
-
-  const results =
-    data &&
-    data.episodesByIds &&
-    data.episodesByIds[0] &&
-    data.episodesByIds[0].characters;
-  console.log("results", results);
 
   React.useEffect(() => {
     document.addEventListener("keydown", onKeydown);
@@ -41,35 +31,30 @@ const Modal = ({ visible = false, id = "", onClose }: ModalProps) => {
 
   return (
     <Layout>
-      {loading ? (
-        <div>loading...</div>
-      ) : error ? (
-        <div>error</div>
-      ) : (
-        <div className="modal" onClick={onClose}>
-          <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
-            <div className="modal-header">
-              <h3 className="modal-title">Episode сharacters</h3>
-              <span className="modal-close" onClick={onClose}>
-                &times;
-              </span>
-            </div>
-            <div className="modal-body">
-              <div className="modal-content">
-                {/* Исправить */}
-                {results.map((res) => {
-                  <div key={res.id}>
-                    <div>
-                      <img src={res.img} alt="image character" />
+      <div className="modal" onClick={onClose}>
+        <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
+          <div className="modal-header">
+            <h3 className="modal-title">Episode сharacters</h3>
+            <span className="modal-close" onClick={onClose}>
+              &times;
+            </span>
+          </div>
+          <div className="modal-body">
+            <div className="modal-content">
+              {characters.map((res) => (
+                <div key={res.id} className="modal-content-block">
+                  <Link to="/Characters" state={{ id: res.id }}>
+                    <div className="modal-content-block__image">
+                      <img src={res.image} alt="image character" />
                     </div>
-                    <div> {res.name} </div>
-                  </div>;
-                })}
-              </div>
+                  </Link>
+                  <div>{res.name}</div>
+                </div>
+              ))}
             </div>
           </div>
         </div>
-      )}
+      </div>
     </Layout>
   );
 };

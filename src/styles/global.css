@@ -20,7 +20,7 @@
 
 .modal-dialog {
   width: 100%;
-  max-width: 550px;
+  max-width: 800px;
   background: white;
   position: relative;
   margin: 0 20px;
@@ -60,6 +60,19 @@
 }
 .modal-content {
   padding: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding-bottom: 10px;
+}
+.modal-content-block {
+  margin-bottom: 20px;
+}
+.modal-content-block__image {
+  margin-bottom: 10px;
+}
+.modal-content-block__image:hover {
+  cursor: pointer;
 }
 
 .modal-title {
