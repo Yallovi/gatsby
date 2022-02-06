@@ -19,6 +19,14 @@ export namespace RickAndMorty {
 
   export interface FetchEpisodesResponse
     extends ResponseType<{ results: Episode[] }> {}
+
+  export interface CharacterData {
+    gender: string
+    image: string
+    name: string
+    species: string
+    status: string
+  }
 }
 
 export const GET_EPISODE = gql`
@@ -37,4 +45,17 @@ export const GET_EPISODE = gql`
       }
     }
   }
+`;
+
+export const GET_PAGE_CHARACTER = gql`
+query ExampleQuery($characterId: ID!) {
+  character(id: $characterId) {
+    gender
+    image
+    name
+    species
+    status
+  }
+}
+
 `;

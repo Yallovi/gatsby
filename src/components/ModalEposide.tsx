@@ -43,7 +43,7 @@ const Modal = ({ visible = false, characters, onClose }: ModalProps) => {
             <div className="modal-content">
               {characters.map((res) => (
                 <div key={res.id} className="modal-content-block">
-                  <Link to="/Characters" state={{ id: res.id }}>
+                  <Link to="/Characters" state={{id: res.id}}>
                     <div className="modal-content-block__image">
                       <img src={res.image} alt="image character" />
                     </div>
