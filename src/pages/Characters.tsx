@@ -1,10 +1,11 @@
 import React from "react";
 import Layout from "@components/Layout";
 import { useQuery } from "@apollo/client";
-import { GET_PAGE_CHARACTER } from "../types/Types";
+import { GET_PAGE_CHARACTER } from "@graphql/query";
 import ErrorPage from "@pages/404";
 import Preloader from "@components/Preloader/Preloader";
 import { Link } from "gatsby";
+import { RickAndMorty } from "@Types/Types";
 
 interface Props {
   location: {

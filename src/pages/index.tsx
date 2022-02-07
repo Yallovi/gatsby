@@ -1,10 +1,11 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
 import Layout from "@components/Layout";
-import { RickAndMorty, GET_EPISODE } from "../types/Types";
+import { RickAndMorty } from "@Types/Types";
 import Modal from "@components/ModalEposide";
 import NotFoundPage from "@pages/404";
 import Preloader from "@components/Preloader/Preloader";
+import { GET_EPISODE } from "@graphql/query";
 
 const IndexPage = () => {
   const [isModal, setModal] = React.useState(false);

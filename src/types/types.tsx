@@ -1,5 +1,3 @@
-import { gql } from "@apollo/client";
-
 type ResponseType<R> = {
   res: R;
 };
@@ -7,6 +5,8 @@ type ResponseType<R> = {
 export namespace RickAndMorty {
   export interface Character {
     id: string;
+    image: string;
+    name: string;
   }
 
   export interface Episode {
@@ -20,6 +20,7 @@ export namespace RickAndMorty {
   export interface FetchEpisodesResponse
     extends ResponseType<{ results: Episode[] }> {}
 
+  //  Узнать и исправить.
   export interface CharacterData {
     gender: string;
     image: string;
@@ -32,39 +33,9 @@ export namespace RickAndMorty {
       dimension: string;
     };
   }
+  // export interface CharacterDataVars {
+  //   characterId: string;
+  // }
+  // export interface FetchCharacterResponse
+  //   extends ResponseType<{ character: CharacterData }> {}
 }
-
-export const GET_EPISODE = gql`
-  query Query {
-    res: episodes {
-      results {
-        id
-        name
-        episode
-        airDate: air_date
-        characters {
-          id
-          image
-          name
-        }
-      }
-    }
-  }
-`;
-
-export const GET_PAGE_CHARACTER = gql`
-  query ExampleQuery($characterId: ID!) {
-    character(id: $characterId) {
-      gender
-      image
-      name
-      species
-      status
-      origin {
-        name
-        type
-        dimension
-      }
-    }
-  }
-`;

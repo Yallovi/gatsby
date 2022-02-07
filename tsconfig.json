@@ -29,9 +29,10 @@
     "paths": {
       "@components/*": ["components/*"],
       "@pages/*": ["pages/*"],
-      "@types/*": ["types/*"],
+      "@Types/*": ["types/*"],
       "@images/*": ["images/*"],
-      "@styles/*": ["styles/*"]
+      "@styles/*": ["styles/*"],
+      "@graphql/*": ["graphql/*"]
     }
   },
   "exclude": [
