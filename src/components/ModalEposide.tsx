@@ -31,20 +31,26 @@ const Modal = ({ visible = false, characters, onClose }: ModalProps) => {
 
   return (
     <Layout>
-      <div className="modal" onClick={onClose}>
-        <div className="modal-dialog" onClick={(e) => e.stopPropagation()}>
-          <div className="modal-header">
-            <h3 className="modal-title">Episode сharacters</h3>
-            <span className="modal-close" onClick={onClose}>
+      <div
+        className="modal fixed top-0 bottom-0 left-0 right-0 w-full flex items-center justify-center z-9999 "
+        onClick={onClose}
+      >
+        <div
+          className="modal-dialog w-full bg-white relative text-left flex flex-col overflow-hidden max-w-screen-md m-0-20"
+          onClick={(e) => e.stopPropagation()}
+        >
+          <div className="modal-header flex items-center p-4 justify-between">
+            <h3 className="modal-title m-0">Episode сharacters</h3>
+            <span className="modal-close cursor-pointer p-4" onClick={onClose}>
               &times;
             </span>
           </div>
-          <div className="modal-body">
-            <div className="modal-content">
+          <div className="modal-body overflow-auto">
+            <div className="modal-content p-4 flex flex-wrap justify-around pb-2">
               {characters.map((res) => (
-                <div key={res.id} className="modal-content-block">
-                  <Link to="/Characters" state={{id: res.id}}>
-                    <div className="modal-content-block__image">
+                <div key={res.id} className="modal-content-block mb-5">
+                  <Link to="/Characters" state={{ id: res.id }}>
+                    <div className="modal-content-block__image mb-2 cursor-pointer">
                       <img src={res.image} alt="image character" />
                     </div>
                   </Link>

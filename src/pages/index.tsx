@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import { RickAndMorty, GET_EPISODE } from "../types/types";
 import Modal from "../components/ModalEposide";
 import ErrorPage from "./404";
+import Preloader from "../components/Preloader/Preloader";
 
 const IndexPage = () => {
   const [isModal, setModal] = React.useState(false);
@@ -21,7 +22,10 @@ const IndexPage = () => {
   }
 
   if (loading) {
-    return <h1>loading...</h1>;
+    return (
+      <Preloader />
+      // <h1>loading...</h1>
+    );
   }
 
   return (
@@ -30,7 +34,7 @@ const IndexPage = () => {
         <div className="bg-slate-300 flex flex-wrap place-content-around">
           {results.map((res) => (
             <div
-              className=" p-6 m-10 min-w-max bg-white rounded-xl shadow-lg w-96 cursor-pointer hover:scale-125 ease-in duration-300 "
+              className=" p-6 m-10 min-w-max bg-white rounded-xl shadow-lg w-96 hover:cursor-pointer hover:scale-125 ease-in duration-300 "
               key={res.id}
               onClick={() => {
                 setModal(true);
