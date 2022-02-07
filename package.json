@@ -27,6 +27,7 @@
     "@graphql-codegen/typescript-resolvers": "^2.4.3",
     "gatsby": "^4.6.0",
     "gatsby-image": "^3.11.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-apollo": "^4.0.2",
     "gatsby-plugin-image": "^2.6.0",
     "gatsby-plugin-modal-routing-3": "^3.0.0",
@@ -47,6 +48,7 @@
     "@types/react-helmet": "^6.1.5",
     "autoprefixer": "^10.4.2",
     "gatsby-plugin-postcss": "^5.6.0",
+    "gatsby-plugin-tsconfig-paths": "^1.0.5",
     "postcss": "^8.4.6",
     "tailwindcss": "^3.0.18",
     "typescript": "^4.5.5"

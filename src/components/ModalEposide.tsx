@@ -1,6 +1,6 @@
 import { Link } from "gatsby";
 import React from "react";
-import Layout from "./layout";
+import Layout from "@components/Layout";
 
 interface ModalProps {
   visible: boolean;

@@ -12,9 +12,16 @@ module.exports = {
         allExtensions: true, // defaults to false
       },
     },
+    {
+      resolve: `gatsby-plugin-tsconfig-paths`,
+      options: {
+        configFile: `${__dirname}/tsconfig.json`,
+      },
+    },
     "gatsby-plugin-typescript",
     "gatsby-plugin-postcss",
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
+    "gatsby-plugin-image",
+    "gatsby-plugin-sharp",
+    // "gatsby-plugin-tsconfig-paths",
   ],
 };

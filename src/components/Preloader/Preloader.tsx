@@ -1,6 +1,4 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image";
-// import Preloader from "../../images/preloader.png";
 
 const Preloader = () => {
   return (

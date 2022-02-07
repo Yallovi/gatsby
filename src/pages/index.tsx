@@ -1,10 +1,10 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import Layout from "../components/layout";
-import { RickAndMorty, GET_EPISODE } from "../types/types";
-import Modal from "../components/ModalEposide";
-import ErrorPage from "./404";
-import Preloader from "../components/Preloader/Preloader";
+import Layout from "@components/Layout";
+import { RickAndMorty, GET_EPISODE } from "../types/Types";
+import Modal from "@components/ModalEposide";
+import NotFoundPage from "@pages/404";
+import Preloader from "@components/Preloader/Preloader";
 
 const IndexPage = () => {
   const [isModal, setModal] = React.useState(false);
@@ -18,14 +18,11 @@ const IndexPage = () => {
   const results = data && data.res && data.res.results;
 
   if (error) {
-    return <ErrorPage />;
+    return <NotFoundPage />;
   }
 
   if (loading) {
-    return (
-      <Preloader />
-      // <h1>loading...</h1>
-    );
+    return <Preloader />;
   }
 
   return (

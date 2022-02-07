@@ -1,9 +1,9 @@
 import React from "react";
-import Layout from "../components/layout";
+import Layout from "@components/Layout";
 import { useQuery } from "@apollo/client";
-import { GET_PAGE_CHARACTER } from "../types/types";
-import ErrorPage from "./404";
-import Preloader from "../components/Preloader/Preloader";
+import { GET_PAGE_CHARACTER } from "../types/Types";
+import ErrorPage from "@pages/404";
+import Preloader from "@components/Preloader/Preloader";
 import { Link } from "gatsby";
 
 interface Props {
@@ -18,7 +18,6 @@ const Characters = ({ location }: Props) => {
   });
 
   const results = data && data.character;
-  console.log(results);
 
   if (loading) {
     return <Preloader />;
@@ -29,7 +28,7 @@ const Characters = ({ location }: Props) => {
 
   return (
     <Layout>
-      <div>
+      <div className="text-lg font-medium">
         <Link to="/">Back</Link>
       </div>
       <div className="flex flex-col justify-center items-center">
