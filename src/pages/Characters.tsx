@@ -7,7 +7,11 @@ import Preloader from "@components/Preloader/Preloader";
 import { Link } from "gatsby";
 
 interface Props {
-  location: any;
+  location: {
+    state: {
+      id: string;
+    };
+  };
 }
 
 const Characters = ({ location }: Props) => {
