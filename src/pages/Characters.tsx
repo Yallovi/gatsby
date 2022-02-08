@@ -21,6 +21,7 @@ const Characters = ({ location }: Props) => {
   const { loading, error, data } = useQuery(GET_PAGE_CHARACTER, {
     variables: { characterId: id },
   });
+  // console.log(data);
 
   const results = data && data.character;
 
@@ -33,6 +34,11 @@ const Characters = ({ location }: Props) => {
 
   return (
     <Layout>
+      {/* <div className="">
+        {Object.entries(results).map(([key, value]) => (
+          <div className=""> {`${key}: ${value}`}</div>
+        ))}
+      </div> */}
       <div className="text-lg font-medium">
         <Link to="/">Back</Link>
       </div>

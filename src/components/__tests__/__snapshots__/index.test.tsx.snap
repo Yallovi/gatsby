@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header renders correctly 1`] = `
+Array [
+  <h1>
+    404: Not Found
+  </h1>,
+  <p>
+    You just hit a route that doesn't exist... the sadness.
+  </p>,
+]
+`;

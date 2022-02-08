@@ -21,17 +21,19 @@ export namespace RickAndMorty {
     extends ResponseType<{ results: Episode[] }> {}
 
   //  Узнать и исправить.
+  export interface Origin {
+    name: string;
+    type: string;
+    dimension: string;
+  }
+
   export interface CharacterData {
     gender: string;
     image: string;
     name: string;
     species: string;
     status: string;
-    origin: {
-      name: string;
-      type: string;
-      dimension: string;
-    };
+    origin: Origin;
   }
   // export interface CharacterDataVars {
   //   characterId: string;

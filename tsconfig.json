@@ -44,5 +44,6 @@
     "jest",
     "src/setupTests.ts"
   ],
-  "include": ["./src/**/*", "graphql"]
+  "include": ["./src/**/*", "graphql"],
+  "types": ["node", "jest", "@testing-library/jest-dom"]
 }
