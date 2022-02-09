@@ -3,7 +3,7 @@ import { gql } from "@apollo/client";
 // export * from './rick-and-morty'
 
 export const FETCH_EPISODE = gql`
-  query Query {
+  query FetchEpisode {
     res: episodes {
       results {
         id
@@ -19,15 +19,3 @@ export const FETCH_EPISODE = gql`
     }
   }
 `;
-
-// export const FETCH_PAGE_CHARACTER = gql`
-//   query Query($characterId: ID!) {
-//     res: character(id: $characterId) {
-//       gender
-//       image
-//       name
-//       species
-//       status
-//     }
-//   }
-// `;

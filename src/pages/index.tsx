@@ -7,7 +7,7 @@ import NotFoundPage from "~pages/404";
 import Preloader from "~components/Preloader/Preloader";
 import { FETCH_EPISODE } from "~graphql/index";
 
-const IndexPage = () => {
+const IndexPage: React.FC = () => {
   const [isModal, setModal] = React.useState(false);
   const [propsDate, setProps] = React.useState([]);
 

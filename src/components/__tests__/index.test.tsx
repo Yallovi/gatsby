@@ -3,7 +3,7 @@ import { cleanup, render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/client/testing";
 import Inedx from "~pages/index";
-import { FETCH_EPISODE } from "~graphql/RickAndMorty/EpisodeQuery";
+import { FETCH_EPISODE } from "~graphql/rick-and-morty/Episode";
 import { resultsQuery } from "../queryTest/EpisodeQueryTest";
 
 afterEach(cleanup);

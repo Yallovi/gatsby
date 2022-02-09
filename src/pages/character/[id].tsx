@@ -28,6 +28,7 @@ const Characters: React.FC<PageProps> = (props) => {
       </div>
     );
   }
+  console.log(data);
 
   const character = data && data.res;
   const { name, image, gender, species, status } = character;

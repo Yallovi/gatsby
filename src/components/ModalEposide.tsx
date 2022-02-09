@@ -1,6 +1,9 @@
+import { useQuery } from "@apollo/client";
 import { Link } from "gatsby";
 import React from "react";
 import Layout from "~components/Layout";
+import { FETCH_EPISODE_BY_ID } from "~graphql/index";
+import { RickAndMorty } from "~Types/index";
 
 interface Modal {
   visible: boolean;

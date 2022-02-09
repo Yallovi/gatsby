@@ -4,7 +4,7 @@ type ResponseType<R> = {
 
 export namespace RickAndMorty {
   export interface Characters {
-    id: string;
+    // id: string;
     image: string;
     name: string;
   }

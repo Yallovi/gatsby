@@ -1,1 +1,1 @@
-export * from "./Rick-and-Morty/Types";
+export * from "./rick-and-morty";
