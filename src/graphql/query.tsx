@@ -20,17 +20,12 @@ export const GET_EPISODE = gql`
 
 export const GET_PAGE_CHARACTER = gql`
   query Query($characterId: ID!) {
-    character(id: $characterId) {
+    res: character(id: $characterId) {
       gender
       image
       name
       species
       status
-      origin {
-        name
-        type
-        dimension
-      }
     }
   }
 `;

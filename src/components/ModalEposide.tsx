@@ -49,7 +49,7 @@ const Modal = ({ visible = false, characters, onClose }: ModalProps) => {
             <div className="modal-content p-4 flex flex-wrap justify-around pb-2">
               {characters.map((res) => (
                 <div key={res.id} className="modal-content-block mb-5">
-                  <Link to="/Characters" state={{ id: res.id }}>
+                  <Link to={`/character/${res.id}`}>
                     <div className="modal-content-block__image mb-2 cursor-pointer">
                       <img src={res.image} alt="image character" />
                     </div>

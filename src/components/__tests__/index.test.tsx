@@ -6,30 +6,6 @@ import Inedx from "@pages/index";
 import { GET_EPISODE } from "@graphql/query";
 import { resultsQuery } from "../queryTest/queryTest";
 
-// import NotFoundPage from "@pages/404";
-
-// describe("Test if the IndexPage component is working as expected", () => {
-//   it("<NotFoundPage /> matches snapshot", () => {
-//     const component = render(<NotFoundPage data-testid="index-test" />);
-//     expect(component.container).toMatchSnapshot();
-//   });
-
-//   it("<NotFoundPage /> renders without exploding", () => {
-//     const component = render(<NotFoundPage data-testid="index-test" />);
-//     expect(component.getByTestId("index-test")).toBeInTheDocument();
-//   });
-// });
-// import renderer from "react-test-renderer";
-// import NotFoundPage from "@pages/404";
-// import Index from "@pages/index";
-
-// describe("Header", () => {
-//   it("renders correctly", () => {
-//     const tree = renderer.create(<Index />).toJSON();
-//     expect(tree).toMatchSnapshot();
-//   });
-// });
-
 afterEach(cleanup);
 
 const mocks = [
@@ -49,6 +25,7 @@ it("renders Episode", async () => {
   );
 
   expect(getByText("loading")).toBeInTheDocument();
-  const episodeNumber = await findByText("S01E01");
+  const episodeNumber = await findByText("S02E09");
   expect(episodeNumber).toBeInTheDocument();
+  expect(resultsQuery.data.res.results.length).toBe(20);
 });
