@@ -1,29 +1,22 @@
 import { PageProps } from "gatsby";
 import React from "react";
-import Layout from "@components/Layout";
+import Layout from "~components/Layout";
 import { useQuery } from "@apollo/client";
-import { GET_PAGE_CHARACTER } from "@graphql/query";
-import ErrorPage from "@pages/404";
-import Preloader from "@components/Preloader/Preloader";
+import { FETCH_PAGE_CHARACTER } from "~graphql/index";
+import ErrorPage from "~pages/404";
+import Preloader from "~components/Preloader/Preloader";
 import { Link } from "gatsby";
-import { RickAndMorty } from "@Types/Types";
+import { RickAndMorty } from "~Types/index";
 
-// interface Props {
-//   location: {
-//     state: {
-//       id: string;
-//     };
-//   };
-// }
-
-const Characters = ({ params }: PageProps) => {
+const Characters: React.FC<PageProps> = (props) => {
+  const { params } = props;
   const { id } = params;
   console.log("id", id);
 
   const { loading, error, data } = useQuery<
     RickAndMorty.FetchCharacterResponse,
-    RickAndMorty.CharacterDataVars
-  >(GET_PAGE_CHARACTER, {
+    RickAndMorty.CharacterVars
+  >(FETCH_PAGE_CHARACTER, {
     variables: { characterId: id },
   });
 

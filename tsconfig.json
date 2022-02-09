@@ -27,12 +27,12 @@
     "noEmit": true,
     "baseUrl": "src",
     "paths": {
-      "@components/*": ["components/*"],
-      "@pages/*": ["pages/*"],
-      "@Types/*": ["types/*"],
-      "@images/*": ["images/*"],
-      "@styles/*": ["styles/*"],
-      "@graphql/*": ["graphql/*"]
+      "~components/*": ["components/*"],
+      "~pages/*": ["pages/*"],
+      "~Types/*": ["types/*"],
+      "~images/*": ["images/*"],
+      "~styles/*": ["styles/*"],
+      "~graphql/*": ["graphql/*"]
     }
   },
   "exclude": [

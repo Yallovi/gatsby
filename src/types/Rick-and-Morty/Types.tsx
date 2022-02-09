@@ -3,7 +3,7 @@ type ResponseType<R> = {
 };
 
 export namespace RickAndMorty {
-  export interface Character {
+  export interface Characters {
     id: string;
     image: string;
     name: string;
@@ -14,21 +14,21 @@ export namespace RickAndMorty {
     name: string;
     episode: string;
     airDate: string;
-    characters: Character[];
+    characters: Characters[];
   }
 
   export interface FetchEpisodesResponse
     extends ResponseType<{ results: Episode[] }> {}
 
-  export interface CharacterData {
+  export interface Character {
     gender: string;
     image: string;
     name: string;
     species: string;
     status: string;
   }
-  export interface CharacterDataVars {
+  export interface CharacterVars {
     characterId: string;
   }
-  export interface FetchCharacterResponse extends ResponseType<CharacterData> {}
+  export interface FetchCharacterResponse extends ResponseType<Character> {}
 }

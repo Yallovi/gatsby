@@ -1,8 +1,8 @@
 import { Link } from "gatsby";
-import React, { useState } from "react";
-import Layout from "@components/Layout";
+import React from "react";
+import Layout from "~components/Layout";
 
-interface ModalProps {
+interface Modal {
   visible: boolean;
   characters: Array<{
     id: string;
@@ -13,7 +13,9 @@ interface ModalProps {
   onClose: () => void;
 }
 
-const Modal = ({ visible = false, characters, onClose }: ModalProps) => {
+const Modal: React.FC<Modal> = (props) => {
+  const { visible, onClose, characters } = props;
+
   const onKeydown = ({ key }: KeyboardEvent) => {
     switch (key) {
       case "Escape":

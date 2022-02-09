@@ -2,16 +2,16 @@ import React from "react";
 import { cleanup, render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 import { MockedProvider } from "@apollo/client/testing";
-import Inedx from "@pages/index";
-import { GET_EPISODE } from "@graphql/query";
-import { resultsQuery } from "../queryTest/queryTest";
+import Inedx from "~pages/index";
+import { FETCH_EPISODE } from "~graphql/RickAndMorty/EpisodeQuery";
+import { resultsQuery } from "../queryTest/EpisodeQueryTest";
 
 afterEach(cleanup);
 
 const mocks = [
   {
     request: {
-      query: GET_EPISODE,
+      query: FETCH_EPISODE,
     },
     result: resultsQuery,
   },

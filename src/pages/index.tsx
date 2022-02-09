@@ -1,11 +1,11 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
-import Layout from "@components/Layout";
-import { RickAndMorty } from "@Types/Types";
-import Modal from "@components/ModalEposide";
-import NotFoundPage from "@pages/404";
-import Preloader from "@components/Preloader/Preloader";
-import { GET_EPISODE } from "@graphql/query";
+import Layout from "~components/Layout";
+import { RickAndMorty } from "~Types/index";
+import Modal from "~components/ModalEposide";
+import NotFoundPage from "~pages/404";
+import Preloader from "~components/Preloader/Preloader";
+import { FETCH_EPISODE } from "~graphql/index";
 
 const IndexPage = () => {
   const [isModal, setModal] = React.useState(false);
@@ -14,7 +14,7 @@ const IndexPage = () => {
   const onClose = () => setModal(false);
 
   const { loading, error, data } =
-    useQuery<RickAndMorty.FetchEpisodesResponse>(GET_EPISODE);
+    useQuery<RickAndMorty.FetchEpisodesResponse>(FETCH_EPISODE);
 
   const results = data && data.res && data.res.results;
 
